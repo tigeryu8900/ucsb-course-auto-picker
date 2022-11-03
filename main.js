@@ -51,6 +51,7 @@ require('dotenv').config();
       }).then(async r => {
         let errorMessageLabel = domParser.parseFromString(await r.text(), 'text/html').querySelector("span#ctl00_pageContent_ErrorMessageLabel");
         if (errorMessageLabel) console_error(errorMessageLabel.textContent);
+        else (console_log(`Successfully picked course ${course}`));
         resolve();
       });
     }))).then(browser_close);
