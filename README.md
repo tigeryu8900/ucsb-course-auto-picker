@@ -35,13 +35,13 @@ To automatically add courses at a specific time (i.e. at the start of a registra
 For Windows, use this command (`/tn` is the task name, `/sd` is the date in `mm/dd/yyyy` format, and `/st` is the time in 24-hour format):
 
 ```shell
-schtasks /create /tn ucsb-course-auto-picker /tr "npm --prefix C:\path\to\repository\root start 12345 23456 34567" /sc once /sd 03/14/2022 /st 13:00
+schtasks /create /tn ucsb-course-auto-picker /tr "npm --prefix C:\path\to\repository start 12345 23456 34567" /sc once /sd 03/14/2022 /st 13:00
 ```
 
 For macOS and Linux, use this command:
 
 ```shell
-echo "npm --prefix /path/to/repository/root start 12345 23456 34567" | at 1300 mar 14
+echo "npm --prefix /path/to/repository start 12345 23456 34567" | at 1300 mar 14
 ```
 
 The date format for the `at` command is very flexible. Run `man at` for more info.
