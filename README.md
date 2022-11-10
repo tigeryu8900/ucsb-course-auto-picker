@@ -10,11 +10,15 @@ Clone this repository to your local directory.
 git clone https://github.com/tigeryu8900/ucsb-course-auto-picker.git
 ```
 
-Create a `.env` file at the root repository containing the username and password you use to log into UCSB Gold.
+Create a `.env` file at the root repository containing the username and password you use to log into UCSB Gold, as well
+as the quarter in the format `YYYYQ` where `YYYY` is the year and `Q` is the quarter where `1` is Winter, `2` is Spring,
+`3` is Summer, and `4` is Fall. Winter quarter is considered to be in the next year, so Winter 2023 comes after
+Fall 2022. In this example, it is set to Winter 2023.
 
 ```dotenv
 UCSBNETID=username
 PASSWORD=password
+QUARTER=20231
 ```
 
 Run this command replacing `12345 23456 34567` with your list of enrollment codes.
@@ -22,10 +26,6 @@ Run this command replacing `12345 23456 34567` with your list of enrollment code
 ```shell
 npm start 12345 23456 34567
 ```
-
-If you need to add a course for a different quarter, set the environment variable `QUARTER` in the format `YYYYQ` where
-`YYYY` is the year and `Q` is the quarter where `1` is Winter, `2` is Spring, `3` is Summer, and `4` is Fall. You could
-set it in `.env` instead as well.
 
 ## Scheduling
 
